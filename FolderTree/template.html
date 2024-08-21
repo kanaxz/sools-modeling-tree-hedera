@@ -1,0 +1,24 @@
+<self>
+   <template as="treeTemplate">
+    <div
+      :class="`tree ${$.@active && 'active'}`">
+      <vars :active="this.@tree === tree || this.tree.branch.indexOf(tree) !== -1"></vars>
+      <div class="row">
+        <model-row
+          :model="tree"
+          :class="`${ $.@active && 'focus open'}`"
+          :on-click="this.select(tree)">
+        </model-row>
+      </div>
+
+      <div
+        class="trees"
+        :v-for="tree of tree.children.filterLink((f)=>f.is(Tree)) with this.treeTemplate">
+      </div>
+    </div>
+  </template>
+  <div 
+      class="root">
+      {{= scope.renderTemplate(this.treeTemplate, { tree: this.@root || this.@calculatedRoot }) }}
+  </div>
+</self>

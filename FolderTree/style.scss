@@ -1,0 +1,54 @@
+tree-full {
+  display: block;
+  width: fit-content;
+  position: relative;
+  height: 100%;
+  > .root {
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  .node {
+    > .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      > * {
+        flex: 1;
+      }
+    }
+    > .nodes {
+      display: none;
+      margin-left: 13px;
+      width: calc(100% - 13px);
+      border-left: 2px dashed #e1e1e1;
+      > .node {
+        > .row {
+          &::before {
+            content: " ";
+            width: 10px;
+            border-bottom: 2px dashed #e1e1e1;
+            margin-top: 2px;
+          }
+
+          > * {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    &.active {
+      > .nodes {
+        display: block;
+        border-color: aquamarine !important;
+      }
+
+      > .row {
+        &::before {
+          border-color: aquamarine !important;
+        }
+      }
+    }
+  }
+}
