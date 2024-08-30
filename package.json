@@ -1,6 +1,6 @@
 {
  "name": "sools-modeling-tree-hedera",
- "version": "1.2.0",
+ "version": "1.3.0",
  "main": "index.js",
  "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,7 @@
  "license": "ISC",
  "description": "",
  "dependencies": {
-  "sools-hedera": "^1.8.0"
+  "sools-hedera": "^1.9.0"
  },
  "repository": {
   "type": "git",
