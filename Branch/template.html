@@ -7,8 +7,8 @@
       <loading-content></loading-text>
     </div>
   </div>
-  <div :v-for="model of this.branch" class="list">
-    <a class="model" :v-link="model.@url">
+  <div @for="model of this.branch" class="list">
+    <a class="model" @link="model.@url">
       <model-component :type="'row'" :model="model"></model-component>
     </a>
   </div>

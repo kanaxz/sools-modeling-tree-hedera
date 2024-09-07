@@ -2,7 +2,7 @@
    <template as="treeTemplate">
     <div
       :class="`tree ${$.@active && 'active'}`">
-      <vars :active="this.@tree === tree || this.tree.branch.indexOf(tree) !== -1"></vars>
+      <var.active>this.@tree === tree || this.tree.branch.indexOf(tree) !== -1</var.active>
       <div class="row">
         <model-row
           :model="tree"
@@ -13,7 +13,7 @@
 
       <div
         class="trees"
-        :v-for="tree of tree.children.filterLink((f)=>f.is(Tree)) with this.treeTemplate">
+        @for="tree of tree.children.filterLink((f)=>f.is(Tree)) with this.treeTemplate">
       </div>
     </div>
   </template>
